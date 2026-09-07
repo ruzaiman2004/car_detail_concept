@@ -13,7 +13,7 @@ Reviewed 7 September 2026:
 - https://www.luxesignature.com.my/contact — +60 17-887 3474; luxe.signature.detailing@gmail.com; 61, Jln Laksamana 6, Taman Sentosa, 41200 Klang, Selangor.
 - Existing brand uses a gold logo. The concept retains the LUXÉ name, spaced wordmark and restrained gold accent. Original website images were reviewed but not reused: they are watermarked brand mockups, not verified studio photography.
 
-All campaign images are generated concept assets, not client work, real LUXÉ facilities or evidence of outcomes. Selected Machines is explicitly a concept campaign. The before/after uses the same image with a simulated dulling filter, labelled on the page. The customer journey is a proposed concept, not an operational promise. No awards, certifications, numerical performance claims, customer counts or testimonials are invented.
+All campaign images are generated concept assets, not client work, real LUXÉ facilities or evidence of outcomes. Selected Machines is explicitly a concept campaign. The before/after uses a matched pair of AI-generated macro images: the polished finish was generated first, then edited to add wash swirls and oxidation haze while retaining the camera and light geometry. Both are explicitly illustrative, not real customer results. The customer journey is a proposed concept, not an operational promise. No awards, certifications, numerical performance claims, customer counts or testimonials are invented.
 
 ## Asset replacement
 
@@ -27,4 +27,6 @@ No analytics, newsletter signup, tracking, automatic messages or backend require
 
 ## Validation
 
-TypeScript and production prerender checks are run locally. Layout includes dedicated rules for 1920, 1440, 1024, 768, 430 and 390px ranges. Browser visual QA and Lighthouse are not claimed; the brief asks for conceptual responsive checks. Use a browser/device pass before an official production launch.
+TypeScript and production prerender checks are run locally. Focused browser verification covered the formerly hidden detailing imagery and headings, the matched comparison at desktop and 390px mobile widths, pointer dragging, and keyboard Home/End endpoints. Width checks at 1920, 1440, 1024, 768, 430 and 390px found no horizontal overflow or fully clipped reveal elements. This is not a Lighthouse audit or physical-device certification.
+
+Reveal elements are visible by default; intersection detection starts a short partial-mask animation only after entry. No observed element is fully clipped while awaiting intersection, avoiding the reveal/lazy-load deadlock.

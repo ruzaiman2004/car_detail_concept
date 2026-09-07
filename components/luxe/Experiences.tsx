@@ -18,8 +18,55 @@ export function CoatingExperience(){return <section className="coating" id="coat
 
 export function DetailGallery(){return <section className="detailing section" id="detailing"><span className="eyebrow">05 / CONSIDERED IN EVERY DETAIL</span><div className="detail-heading"><h2 className="display reveal-text">OBSESSION<br/>LIVES IN<br/><span className="muted">THE DETAILS.</span></h2><p>Leather. Paint. Glass. The spaces in between.<br/>Interior and exterior detailing that gives<br/>every material its own consideration.</p></div><div className="detail-composition"><figure className="detail-main reveal-image"><Photo name="interior" alt="Illustrative black leather cockpit with fine stitching"/><figcaption><span>01 — A FEELING, REFINED.</span><span>INTERIOR CARE</span></figcaption></figure><figure className="detail-small reveal-image"><Photo name="paint" alt="Illustrative close-up of droplets across sculpted paint"/><figcaption><span>02 — A SURFACE, CONSIDERED.</span></figcaption><p>Care that goes beyond the first impression.</p></figure></div></section>}
 
-export function BeforeAfter(){const [position,setPosition]=useState(50);const container=useRef<HTMLDivElement>(null);const move=(clientX:number)=>{const rect=container.current?.getBoundingClientRect();if(rect)setPosition(Math.max(0,Math.min(100,((clientX-rect.left)/rect.width)*100)))};return <section className="finish section" id="finish"><div className="section-heading"><span className="eyebrow">06 / SURFACE REFINEMENT</span><span className="eyebrow muted">MOVE THE LINE. SEE THE CHANGE.</span></div><h2 className="display reveal-text">THE DIFFERENCE<br/>IS IN THE FINISH.</h2><div className="comparison" ref={container} style={{'--split':`${position}%`} as React.CSSProperties} onPointerDown={e=>{e.currentTarget.setPointerCapture(e.pointerId);move(e.clientX)}} onPointerMove={e=>{if(e.currentTarget.hasPointerCapture(e.pointerId))move(e.clientX)}}><Photo name="hero" alt="Illustrative glossy finish, shown alongside a simulated dull finish"/><div className="comparison-before"><Photo name="hero" alt=""/></div><span className="before-label">BEFORE / SIMULATED</span><span className="after-label">AFTER / CONCEPT</span><div className="comparison-divider" aria-hidden="true"><span><ArrowLeftRight size={22}/></span></div></div><div className="comparison-control"><Slider aria-label="Before and after comparison position" value={[position]} onValueChange={v=>setPosition(Array.isArray(v)?v[0]:v)} className="lux-slider"/><span className="eyebrow">DRAG TO COMPARE</span></div><p className="disclosure">Illustrative finish study using a simulated dulling effect. This is not a real before-and-after result; achievable results depend on the vehicle’s condition.</p></section>}
+export function BeforeAfter(){
+ const [position,setPosition]=useState(50);
+ const container=useRef<HTMLDivElement>(null);
+ const move=(clientX:number)=>{
+  const rect=container.current?.getBoundingClientRect();
+  if(rect)setPosition(Math.max(0,Math.min(100,((clientX-rect.left)/rect.width)*100)));
+ };
+ return <section className="finish section" id="finish">
+  <div className="section-heading"><span className="eyebrow">06 / SURFACE REFINEMENT</span><span className="eyebrow muted">MOVE THE LINE. SEE THE CHANGE.</span></div>
+  <h2 className="display reveal-text">THE DIFFERENCE<br/>IS IN THE FINISH.</h2>
+  <div className="comparison" ref={container} style={{'--split':`${position}%`} as React.CSSProperties}
+   onPointerDown={e=>{if(e.button!==0)return;e.currentTarget.setPointerCapture(e.pointerId);move(e.clientX)}}
+   onPointerMove={e=>{if(e.currentTarget.hasPointerCapture(e.pointerId))move(e.clientX)}}
+   onPointerUp={e=>{if(e.currentTarget.hasPointerCapture(e.pointerId))e.currentTarget.releasePointerCapture(e.pointerId)}}>
+   <Photo name="finish-after" alt="Concept of polished graphite paint with a clean inspection-light reflection"/>
+   <div className="comparison-before"><Photo name="finish-before" alt="Concept of the same paint surface with dense wash swirls and hazing before correction"/></div>
+   <span className="before-label">BEFORE / SWIRL MARKS</span><span className="after-label">AFTER / POLISHED</span>
+   <div className="comparison-divider" aria-hidden="true"><span><ArrowLeftRight size={22}/></span></div>
+  </div>
+  <div className="comparison-control">
+   <span className="eyebrow" id="finish-slider-label">DRAG TO COMPARE</span>
+   <Slider aria-labelledby="finish-slider-label" value={[position]} min={0} max={100} onValueChange={v=>setPosition(Array.isArray(v)?v[0]:v)} className="lux-slider"/>
+   <div className="comparison-presets"><button onClick={()=>setPosition(100)} aria-pressed={position===100}>View before</button><button onClick={()=>setPosition(0)} aria-pressed={position===0}>View after</button></div>
+  </div>
+  <p className="disclosure">Illustrative paint-correction study. These matched AI-generated images show swirl-marked and polished finishes, not an actual LUXÉ customer result. Achievable results depend on the vehicle’s condition.</p>
+ </section>;
+}
 
 export function Process(){const [expanded,setExpanded]=useState<number|null>(0);const items=[['CONSULT','Start with your car. And how you use it.','Tell LUXÉ about your vehicle, your driving routine and what you want to preserve.'],['ASSESS','Understand the surface.','Discuss the current finish, areas of wear and the care most appropriate for the vehicle.'],['PROTECT','Choose a considered approach.','Confirm the treatment, coverage, timing and quotation with the studio before proceeding.'],['DELIVER','Enjoy the details.','Review the finish and ask about aftercare to keep the vehicle looking its best.']];return <section className="process section"><div className="process-intro"><span className="eyebrow">08 / A CONSIDERED JOURNEY</span><h2 className="display">FROM FIRST<br/>CONVERSATION.<br/><span className="muted">TO FINAL DETAIL.</span></h2><p>A proposed journey, built around your vehicle.<br/>Confirm arrangements directly with LUXÉ.</p></div><div className="process-list">{items.map(([title,short,desc],i)=><article className={expanded===i?'active':''} key={title}><button aria-expanded={expanded===i} aria-controls={`process-${i}`} onClick={()=>setExpanded(expanded===i?null:i)}><span className="eyebrow">0{i+1}</span><span>{title}</span>{expanded===i?<Minus size={19}/>:<Plus size={19}/>}</button><div id={`process-${i}`} className="process-detail" hidden={expanded!==i}><p>{short}</p><p>{desc}</p></div></article>)}</div></section>}
 
-export function MotionSystem(){useEffect(()=>{const mq=window.matchMedia('(prefers-reduced-motion: reduce)');if(mq.matches)return;document.documentElement.classList.add('motion-ready');const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal-text,.reveal-image').forEach(e=>observer.observe(e));return()=>{observer.disconnect();document.documentElement.classList.remove('motion-ready')}},[]);return null}
+export function MotionSystem(){
+ useEffect(()=>{
+  const mq=window.matchMedia('(prefers-reduced-motion: reduce)');
+  if(mq.matches || !('IntersectionObserver' in window)) return;
+  const elements=document.querySelectorAll('.reveal-text,.reveal-image');
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{
+    if(entry.isIntersecting){
+     entry.target.classList.add('is-visible');
+     observer.unobserve(entry.target);
+    }
+   });
+  },{threshold:0,rootMargin:'0px 0px 80px 0px'});
+  document.documentElement.classList.add('motion-ready');
+  elements.forEach(element=>observer.observe(element));
+  return()=>{
+   observer.disconnect();
+   document.documentElement.classList.remove('motion-ready');
+  };
+ },[]);
+ return null;
+}

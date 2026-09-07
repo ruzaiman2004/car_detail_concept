@@ -9,3 +9,10 @@ Use case: ads-marketing. Asset type: photoreal automotive campaign detail, illus
 
 INTERIOR — interior-source.png
 Use case: ads-marketing. Asset type: photoreal automotive campaign cockpit detail, illustrative concept imagery. Generate exactly one landscape image, 1536x1024. Subject: warm-black leather sports car cockpit detail, steering wheel and seat stitching both visible. Emphasize precision craftsmanship, realistic soft leather grain and fine stitching. Dark editorial luxury automotive photography with gentle silver illumination, warm black shadows, carefully controlled highlights and premium materials. No people, no text, no lettering, no watermark. This is illustrative concept imagery, not a representation of an actual LUXÉ project or studio.
+
+
+FINISH COMPARISON — Built-in imagegen, one generation and one edit.
+AFTER: finish-after-source.png (1536x1024); public outputs: ../public/images/finish-after-768.webp and finish-after-1536.webp.
+Prompt: Premium dark graphite bonnet/fender extreme macro, smooth curved clearcoat fills frame, broad silver inspection-light reflection diagonally top-left to bottom-right, immaculate glossy finish, subtle lower-right panel seam; no scratches, dust, water, text, logos, or whole car.
+BEFORE: finish-before-source.png (1536x1024); public outputs: ../public/images/finish-before-768.webp and finish-before-1536.webp.
+Edit prompt: Change only clearcoat condition to dense natural fine circular wash swirls and subtle oxidation haze around the light. Lock framing, perspective, panel shape, seam, reflection centerline, exposure, colors, and background. No crop, rotation, body damage, text, or additional objects.

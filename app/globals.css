@@ -49,3 +49,21 @@
 .comparison-presets button{background:none;color:#b6bdc1;border:0;border-bottom:1px solid #51585b;padding:10px 0;font-size:12px;white-space:nowrap}
 .comparison-presets button:hover,.comparison-presets button[aria-pressed=true]{color:#eee9dd;border-color:var(--gold)}
 @media(max-width:767px){.comparison-control{flex-wrap:wrap;gap:6px 18px;margin-top:14px}.comparison-control .lux-slider{flex:1;min-width:130px}.comparison-presets{width:100%;margin:0 0 12px;justify-content:space-between}.comparison-presets button{font-size:12px}.before-label,.after-label{font-size:8px}}
+
+/* Keep the oversized footer signature centered inside the page gutter. */
+.footer-wordmark{
+  width:100%;
+  margin:100px auto 55px;
+  padding:0;
+  font-size:clamp(120px,27vw,520px);
+  line-height:.84;
+  letter-spacing:.025em;
+  text-align:center;
+  white-space:nowrap;
+}
+@media(max-width:767px){
+  .footer-wordmark{
+    margin:70px auto 35px;
+    font-size:27vw;
+  }
+}

@@ -1,0 +1,72 @@
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import { ArrowUpRight, ArrowDown, ArrowLeftRight, Plus, Minus } from 'lucide-react';
+import { Photo } from './Opening';
+import { Slider } from '@/components/ui/slider';
+
+const services=[
+ {id:'01',title:<>PAINT<br/>PROTECTION FILM.</>,name:'Paint protection film',photo:'hero',copy:'An almost invisible layer between your paint and the road. Explore protection for high-impact areas or the entire vehicle.',detail:'Front-end & full-body protection',href:'#protection'},
+ {id:'02',title:<>CERAMIC &<br/>GRAPHENE.</>,name:'Ceramic and graphene coating',photo:'paint',copy:'Bring depth to the colour. Definition to the reflections. Surface coatings designed around gloss, water behaviour and easier care.',detail:'Surface protection & finish',href:'#coating'},
+ {id:'03',title:<>SIGNATURE<br/>DETAILING.</>,name:'Signature detailing',photo:'interior',copy:'From the first hand wash to the last interior touch. Thoughtful care for the surfaces you see, and the ones you feel.',detail:'Interior & exterior care',href:'#detailing'},
+ {id:'04',title:<>RESTORE.<br/>REFINE.</>,name:'Restoration',photo:'paint',copy:'A considered response to wear. Discuss light scratch removal, headlight lens restoration and the finish your vehicle can achieve.',detail:'Paint refinement & headlight restoration',href:'#finish'}
+];
+export function Services(){const [active,setActive]=useState(0);const root=useRef<HTMLDivElement>(null);useEffect(()=>{const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)setActive(Number((e.target as HTMLElement).dataset.chapter))})},{rootMargin:'-25% 0px -35% 0px',threshold:0});root.current?.querySelectorAll('[data-chapter]').forEach(e=>observer.observe(e));return()=>observer.disconnect()},[]);return <section className="services section" id="services"><div className="section-heading"><span className="eyebrow">02 / THE SIGNATURE APPROACH</span><p>Every surface. Every curve.<br/>Every reason you chose it.</p></div><div className="services-layout" ref={root}><div className="service-visual"><div className="service-image-stack">{services.map((s,i)=><Photo key={s.id} name={s.photo} alt={`Concept automotive imagery for ${s.name}`} className={active===i?'active':''}/>)}<div className="image-corner">DETAIL / {services[active].id}</div><span className="image-caption">ILLUSTRATIVE CAMPAIGN</span></div><div className="service-progress">{services.map((s,i)=><a href={`#service-${s.id}`} key={s.id} className={active===i?'active':''} aria-label={`Go to ${s.name}`}>{s.id}<span/></a>)}</div></div><div className="service-chapters">{services.map((s,i)=><article key={s.id} data-chapter={i} id={`service-${s.id}`} className="service-chapter"><span className="eyebrow gold">/ {s.id}</span><h2>{s.title}</h2><div className="mobile-service-image"><Photo name={s.photo} alt={`Illustrative ${s.name} campaign`}/></div><p>{s.copy}</p><span className="service-detail">{s.detail}</span><a className="text-link" href={s.href}>DISCOVER <ArrowUpRight size={19}/></a></article>)}</div></div><div className="additional-services"><span className="eyebrow">BEYOND THE FINISH</span><p>Hand wash · Tar removal · Odour elimination · Engine cleaning · Hazardous cleaning · Valet service</p><a href="#contact" className="text-link">GET IN TOUCH <ArrowUpRight size={16}/></a></div></section>}
+
+export function PPFExperience(){const [coverage,setCoverage]=useState(56);const [manual,setManual]=useState(false);const ref=useRef<HTMLElement>(null);useEffect(()=>{if(manual||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;let frame=0;const update=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{const rect=ref.current?.getBoundingClientRect();if(rect&&rect.top<innerHeight&&rect.bottom>0)setCoverage(Math.max(8,Math.min(100,((innerHeight-rect.top)/(innerHeight+rect.height)) * 145)))})};window.addEventListener('scroll',update,{passive:true});return()=>{window.removeEventListener('scroll',update);cancelAnimationFrame(frame)}},[manual]);return <section id="protection" className="ppf section" ref={ref}><div className="section-heading"><span className="eyebrow">03 / PAINT PROTECTION FILM</span><span className="eyebrow muted">PROTECTION, WITHOUT COMPROMISE.</span></div><div className="ppf-heading"><h2 className="display">INVISIBLE<br/><span className="muted">PROTECTION.</span></h2><p>Keep the original finish in focus.<br/>A transparent film, shaped around<br/>the lines that make it yours.</p></div><div className="ppf-stage" style={{'--coverage':`${coverage}%`} as React.CSSProperties}><Photo name="hero" alt="Illustrative graphite sports car for the interactive film demonstration"/><div className="film-silhouette"><div className="film-layer"/></div><div className="scan-line" aria-hidden="true"><span>PPF</span><i/></div><span className="ppf-annotation">ORIGINAL FORM.<br/>AN ADDED LAYER.</span><span className="ppf-indicator">{String(Math.round(coverage)).padStart(2,'0')}<small> / 100</small></span></div><div className="ppf-controls"><span className="eyebrow" id="ppf-label">EXPLORE THE LAYER</span><Slider aria-labelledby="ppf-label" value={[coverage]} onValueChange={v=>{setManual(true);setCoverage(Array.isArray(v)?v[0]:v)}} min={0} max={100} className="detail-slider"/><ArrowLeftRight size={18}/></div><div className="ppf-footer"><p>A conceptual visualisation of film coverage. Final coverage and product selection are confirmed after assessment.</p><a href="#contact" className="text-link">FIND YOUR PROTECTION <ArrowUpRight size={17}/></a></div></section>}
+
+export function CoatingExperience(){return <section className="coating" id="coating"><Photo name="paint" alt="Concept macro of water beading on deep graphite paint"/><div className="coating-shade"/><div className="reflection-beam" aria-hidden="true"/><div className="coating-content"><span className="eyebrow">04 / CERAMIC & GRAPHENE</span><h2 className="display reveal-text">DEPTH YOU<br/>CAN SEE.</h2><p>Reflections with definition. A finish with presence.<br/>Discover ceramic and graphene coatings for<br/>surface protection and a deeper-looking gloss.</p><a href="#contact" className="text-link">EXPLORE COATINGS <ArrowUpRight size={18}/></a></div><div className="coating-bottom"><span>THE BEAUTY IS ON THE SURFACE.</span><span>THE CARE GOES DEEPER.</span></div></section>}
+
+export function DetailGallery(){return <section className="detailing section" id="detailing"><span className="eyebrow">05 / CONSIDERED IN EVERY DETAIL</span><div className="detail-heading"><h2 className="display reveal-text">OBSESSION<br/>LIVES IN<br/><span className="muted">THE DETAILS.</span></h2><p>Leather. Paint. Glass. The spaces in between.<br/>Interior and exterior detailing that gives<br/>every material its own consideration.</p></div><div className="detail-composition"><figure className="detail-main reveal-image"><Photo name="interior" alt="Illustrative black leather cockpit with fine stitching"/><figcaption><span>01 — A FEELING, REFINED.</span><span>INTERIOR CARE</span></figcaption></figure><figure className="detail-small reveal-image"><Photo name="paint" alt="Illustrative close-up of droplets across sculpted paint"/><figcaption><span>02 — A SURFACE, CONSIDERED.</span></figcaption><p>Care that goes beyond the first impression.</p></figure></div></section>}
+
+export function BeforeAfter(){
+ const [position,setPosition]=useState(50);
+ const container=useRef<HTMLDivElement>(null);
+ const move=(clientX:number)=>{
+  const rect=container.current?.getBoundingClientRect();
+  if(rect)setPosition(Math.max(0,Math.min(100,((clientX-rect.left)/rect.width)*100)));
+ };
+ return <section className="finish section" id="finish">
+  <div className="section-heading"><span className="eyebrow">06 / SURFACE REFINEMENT</span><span className="eyebrow muted">MOVE THE LINE. SEE THE CHANGE.</span></div>
+  <h2 className="display reveal-text">THE DIFFERENCE<br/>IS IN THE FINISH.</h2>
+  <div className="comparison" ref={container} style={{'--split':`${position}%`} as React.CSSProperties}
+   onPointerDown={e=>{if(e.button!==0)return;e.currentTarget.setPointerCapture(e.pointerId);move(e.clientX)}}
+   onPointerMove={e=>{if(e.currentTarget.hasPointerCapture(e.pointerId))move(e.clientX)}}
+   onPointerUp={e=>{if(e.currentTarget.hasPointerCapture(e.pointerId))e.currentTarget.releasePointerCapture(e.pointerId)}}>
+   <Photo name="finish-after" alt="Concept of polished graphite paint with a clean inspection-light reflection" eager/>
+   <div className="comparison-before"><Photo name="finish-before" alt="Concept of the same paint surface with dense wash swirls and hazing before correction" eager/></div>
+   <span className="before-label">BEFORE / SWIRL MARKS</span><span className="after-label">AFTER / POLISHED</span>
+   <div className="comparison-divider" aria-hidden="true"><span><ArrowLeftRight size={22}/></span></div>
+  </div>
+  <div className="comparison-control">
+   <span className="eyebrow" id="finish-slider-label">DRAG TO COMPARE</span>
+   <Slider aria-labelledby="finish-slider-label" value={[position]} min={0} max={100} onValueChange={v=>setPosition(Array.isArray(v)?v[0]:v)} className="detail-slider"/>
+   <div className="comparison-presets"><button onClick={()=>setPosition(100)} aria-pressed={position===100}>View before</button><button onClick={()=>setPosition(0)} aria-pressed={position===0}>View after</button></div>
+  </div>
+  <p className="disclosure">Illustrative paint-correction study. These matched AI-generated images show swirl-marked and polished finishes, not an actual customer result. Achievable results depend on the vehicle’s condition.</p>
+ </section>;
+}
+
+export function Process(){const [expanded,setExpanded]=useState<number|null>(0);const items=[['CONSULT','Start with your car. And how you use it.','Tell your detailer about your vehicle, your driving routine and what you want to preserve.'],['ASSESS','Understand the surface.','Discuss the current finish, areas of wear and the care most appropriate for the vehicle.'],['PROTECT','Choose a considered approach.','Confirm the treatment, coverage, timing and quotation with the studio before proceeding.'],['DELIVER','Enjoy the details.','Review the finish and ask about aftercare to keep the vehicle looking its best.']];return <section className="process section"><div className="process-intro"><span className="eyebrow">08 / A CONSIDERED JOURNEY</span><h2 className="display">FROM FIRST<br/>CONVERSATION.<br/><span className="muted">TO FINAL DETAIL.</span></h2><p>A proposed journey, built around your vehicle.<br/>An illustrative automotive detailing experience.</p></div><div className="process-list">{items.map(([title,short,desc],i)=><article className={expanded===i?'active':''} key={title}><button aria-expanded={expanded===i} aria-controls={`process-${i}`} onClick={()=>setExpanded(expanded===i?null:i)}><span className="eyebrow">0{i+1}</span><span>{title}</span>{expanded===i?<Minus size={19}/>:<Plus size={19}/>}</button><div id={`process-${i}`} className="process-detail" hidden={expanded!==i}><p>{short}</p><p>{desc}</p></div></article>)}</div></section>}
+
+export function MotionSystem(){
+ useEffect(()=>{
+  const mq=window.matchMedia('(prefers-reduced-motion: reduce)');
+  if(mq.matches || !('IntersectionObserver' in window)) return;
+  const elements=document.querySelectorAll('.reveal-text,.reveal-image');
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{
+    if(entry.isIntersecting){
+     entry.target.classList.add('is-visible');
+     observer.unobserve(entry.target);
+    }
+   });
+  },{threshold:0,rootMargin:'0px 0px 80px 0px'});
+  document.documentElement.classList.add('motion-ready');
+  elements.forEach(element=>observer.observe(element));
+  return()=>{
+   observer.disconnect();
+   document.documentElement.classList.remove('motion-ready');
+  };
+ },[]);
+ return null;
+}

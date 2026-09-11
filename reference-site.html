@@ -1,0 +1,634 @@
+<!-- inner content -->
+  
+<!DOCTYPE html>
+<!--
+**********************************************************************************************************
+    Copyright (c) 2024.
+**********************************************************************************************************  -->
+<!--
+Template Name: Auto Plus – Laravel Car Wash Booking
+Version: 3.0.0
+Author: Media City
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]> -->
+<html lang="en">
+<!-- <![endif]-->
+<!-- head -->
+<head>
+<title>
+                    Luxe Signature Detailing
+            </title>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description" content="Luxesignature" />
+<meta name="keywords" content="car wash Luxesignature">
+<meta name="author" content="Luxesignature" />
+<meta name="MobileOptimized" content="320" />
+<link rel="icon" type="image/icon" href="images/favicon/favicon.ico"> <!-- favicon-icon -->
+<!-- theme style -->
+<link href="https://www.luxesignature.com.my/css/bootstrap.min.css" rel="stylesheet" type="text/css"/> <!-- bootstrap css -->
+<link href="https://www.luxesignature.com.my/css/font-awesome.min.css" rel="stylesheet" type="text/css"/> <!-- fontawesome css -->
+<link href="https://www.luxesignature.com.my/css/icon-font.css" rel="stylesheet" type="text/css"/> <!-- icon-font css -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700|Poppins:400,500,700" rel="stylesheet"> <!-- google font -->
+<link href="https://www.luxesignature.com.my/css/select2.min.css" rel="stylesheet" type="text/css"> <!-- Select2 -->
+<link href="https://www.luxesignature.com.my/css/menumaker.css" rel="stylesheet" type="text/css"/> <!-- menu css -->
+<link href="https://www.luxesignature.com.my/css/owl.carousel.css" rel="stylesheet" type="text/css"/> <!-- owl carousel css -->
+<link href="https://www.luxesignature.com.my/css/magnific-popup.css" rel="stylesheet" type="text/css"/> <!-- magnify popup css -->
+<link href="https://www.luxesignature.com.my/css/datepicker.css" rel="stylesheet" type="text/css"/> <!-- datepicker css -->
+<link href="https://www.luxesignature.com.my/css/style.css" rel="stylesheet" type="text/css"/> <!-- custom css -->
+<!-- Web Application Manifest -->
+<link rel="manifest" href="https://www.luxesignature.com.my/manifest.json">
+<!-- Chrome for Android theme color -->
+<meta name="theme-color" content="#000000">
+
+<!-- Add to homescreen for Chrome on Android -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="PWA">
+<link rel="icon" sizes="512x512" href="https://luxesignature.com.my/images/icons/icon-512x512.png">
+
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="PWA">
+<link rel="apple-touch-icon" href="https://luxesignature.com.my/images/icons/icon-512x512.png">
+
+
+<link href="https://luxesignature.com.my/images/icons/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+<link href="https://luxesignature.com.my/images/icons/splash-750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+<link href="https://luxesignature.com.my/images/icons/splash-1242x2208.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+<link href="https://luxesignature.com.my/images/icons/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+<link href="https://luxesignature.com.my/images/icons/splash-828x1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+<link href="https://luxesignature.com.my/images/icons/splash-1242x2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+<link href="https://luxesignature.com.my/images/icons/splash-1536x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+<link href="https://luxesignature.com.my/images/icons/splash-1668x2224.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+<link href="https://luxesignature.com.my/images/icons/splash-1668x2388.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+<link href="https://luxesignature.com.my/images/icons/splash-2048x2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+
+<!-- Tile for Win8 -->
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://luxesignature.com.my/images/icons/icon-512x512.png">
+
+<script type="text/javascript">
+    // Initialize the service worker
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('https://www.luxesignature.com.my/serviceworker.js', {
+            scope: '.'
+        }).then(function (registration) {
+            // Registration was successful
+            console.log('Laravel PWA: ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+            // registration failed :(
+            console.log('Laravel PWA: ServiceWorker registration failed: ', err);
+        });
+    }
+</script><!-- end theme style -->
+</head>
+<!-- end head -->
+<!--body start-->
+<body>
+<!-- preloader -->
+  <div class="preloader">
+    <div class="status">
+      <div class="status-message">
+      </div>
+    </div>
+  </div>
+<!-- end preloader -->
+<!-- session -->
+<!-- end session -->
+<!--  top bar -->
+  <div class="top-bar hidden-xs">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <div class="info-bar">
+            <ul>
+                                                                    <li><i class="fa fa-envelope" aria-hidden="true"></i> luxe.signature.detailing@gmail.com</li>
+                    <li>|</li>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i>0178873474</li>
+                                                            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="top-bar-right">
+            <div class="top-menu hidden-sm">
+              <ul>
+                                                        <li><a href="https://www.luxesignature.com.my/login">Login</a></li>
+                      <li><a href="https://www.luxesignature.com.my/register">Register</a></li>
+                                                </ul>
+            </div>
+            <div class="social-icon">
+              <ul>
+                                                      <li><a href="https://maps.app.goo.gl/GbYt2ALRN9HQuH9CA?g_st=com.google.maps.preview.copy" title="Google" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+                                      <li><a href="https://www.instagram.com" title="Instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  end top bar -->
+<!--  navigation -->
+  <div class="nav-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="logo">
+                                                            <a href="https://www.luxesignature.com.my"><img src="https://www.luxesignature.com.my/images/logo/Logo-H-IMG-Gold-Hi-Res-small.png" class="img-responsive" alt="logo"></a>
+                                                    </div>
+        </div>
+        <div class="col-sm-8">
+                    <div class="navigation">
+            <div id="cssmenu">
+              <ul>
+                <li><a href="https://www.luxesignature.com.my">Home</a>
+                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <li><a href="https://www.luxesignature.com.my/contact">Contact</a>
+                </li>
+                                                      <li class="hidden-md hidden-lg"><a href="https://www.luxesignature.com.my/login">Login</a></li>
+                    <li class="hidden-md hidden-lg"><a href="https://www.luxesignature.com.my/register">Register</a></li>
+                                                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  end navigation -->
+                <div id="home-slider" class="home-slider">
+                <div class="item home-slider-bg" style="background-image: url(https://www.luxesignature.com.my/images/slider/slider_1743483870Luxe_Signature_Brand_Profile-4.png)">
+          <div class="container">
+            <div class="slider-dtl">
+              <h4 class="slider-sub-heading">We Care</h4>
+              <h1 class="slider-heading">For Your Car</h1>
+              <p>Discover LUXÉ Signature Detailing, the ultimate destination for high-end car detailing excellence.</p>
+              <div class="slider-btn">
+                                  <a href="https://luxesignature.com.my" class="btn btn-orange">Read More</a>
+                                                  <a href="https://luxesignature.com.my/contact" class="btn btn-orange">Contact Us</a>
+                              </div>
+            </div>
+          </div>
+        </div>
+                <div class="item home-slider-bg" style="background-image: url(https://www.luxesignature.com.my/images/slider/slider_1743483877Luxe_Signature_Brand_Profile-7.png)">
+          <div class="container">
+            <div class="slider-dtl">
+              <h4 class="slider-sub-heading">We Care</h4>
+              <h1 class="slider-heading">For Your Car</h1>
+              <p>Discover LUXÉ Signature Detailing, the ultimate destination for high-end car detailing excellence.</p>
+              <div class="slider-btn">
+                                  <a href="https://luxesignature.com.my/" class="btn btn-orange">Read More</a>
+                                                  <a href="https://luxesignature.com.my/contact" class="btn btn-orange">Contact Us</a>
+                              </div>
+            </div>
+          </div>
+        </div>
+                <div class="item home-slider-bg" style="background-image: url(https://www.luxesignature.com.my/images/slider/slider_1743483886Luxe_Signature_Brand_Profile-4.png)">
+          <div class="container">
+            <div class="slider-dtl">
+              <h4 class="slider-sub-heading">We Care</h4>
+              <h1 class="slider-heading">For Your Car</h1>
+              <p>Discover LUXÉ Signature Detailing, the ultimate destination for high-end car detailing excellence.</p>
+              <div class="slider-btn">
+                                  <a href="https://luxesignature.com.my" class="btn btn-orange">Read More</a>
+                                                  <a href="https://luxesignature.com.my/contact" class="btn btn-orange">Contact Us</a>
+                              </div>
+            </div>
+          </div>
+        </div>
+               
+    </div>
+      <!--  end slider -->
+    <!--  who we are -->
+    <div id ="who-we-are" class="who-we-are-main-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="section">
+              <h3 class="section-heading">Who We Are?</h3>
+              <p>"Discover LUXÉ Signature Detailing, the ultimate destination for high-end car detailing excellence. Nestled in the heart of Taman Sentosa, our service caters to discerning car enthusiasts, collectors, and luxury car owners. From meticulous interior and exterior detailing to advanced ceramic coating, paint protection, and restoration, we elevate your vehicle's aesthetics and preserve its pristine condition using exceptional products and precision techniques. Unleash the true potential of your prized possession at LUXÉ Signature Detailing.</p>
+            </div>
+            <div class="row who-we-are-points" style="display: none;">
+              <div class="col-sm-6">
+                <div class="who-we-are-block">
+                  <div class="who-we-are-icon">
+                    <i class="icon-1" aria-hidden="true"></i>
+                  </div>
+                  <div class="who-we-are-dtl">
+                    <h5 class="who-we-are-heading">Donec Pede Fringilla</h5>
+                    <p>Nullam dictum felis eu pede mollis preti integer tincidunt cras dapibus vivam elementum semper nisi.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="who-we-are-block">
+                  <div class="who-we-are-icon">
+                    <i class="icon-2" aria-hidden="true"></i>
+                  </div>
+                  <div class="who-we-are-dtl">
+                    <h5 class="who-we-are-heading">Donec Pede Fringilla</h5>
+                    <p>Nullam dictum felis eu pede mollis preti integer tincidunt cras dapibus vivam elementum semper nisi.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="who-we-are-block">
+                  <div class="who-we-are-icon">
+                    <i class="icon-3" aria-hidden="true"></i>
+                  </div>
+                  <div class="who-we-are-dtl">
+                    <h5 class="who-we-are-heading">Donec Pede Fringilla</h5>
+                    <p>Nullam dictum felis eu pede mollis preti integer tincidunt cras dapibus vivam elementum semper nisi.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="who-we-are-block">
+                  <div class="who-we-are-icon">
+                    <i class="icon-8" aria-hidden="true"></i>
+                  </div>
+                  <div class="who-we-are-dtl">
+                    <h5 class="who-we-are-heading">Donec Pede Fringilla</h5>
+                    <p>Nullam dictum felis eu pede mollis preti integer tincidunt cras dapibus vivam elementum semper nisi.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 hidden-sm">
+            <div class="who-we-are-img">
+              <img src="images/who-we-are.png" class="img-responsive" alt="who-we-are">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--  end who we are -->
+  
+    <!--  services -->
+    <div id="services" class="services-main-block">
+      <div class="container">
+        <div class="section text-center">
+          <h3 class="section-heading">Our Services</h3>
+          <p class="sub-heading">Because Your Car Deserves the Best</p>
+        </div>
+        <div class="row">
+                                    <div class="col-md-3 col-sm-6">
+                <div class="service-block text-center">
+                  <div class="service-icon">
+                    <a href="#"><img src="https://www.luxesignature.com.my/images/services/1746781164car-wash.png" class="img-responsive" alt="service-01"></a>
+                  </div>
+                  <div class="service-dtl">
+                    <a href="#"><h5 class="service-heading">Vehicle Hand Wash</h5></a>
+                    <p>Gentle, thorough cleaning by hand to protect your car’s finish and leave it spotless.</p>
+                  </div>
+                </div>
+              </div>
+                          <div class="col-md-3 col-sm-6">
+                <div class="service-block text-center">
+                  <div class="service-icon">
+                    <a href="#"><img src="https://www.luxesignature.com.my/images/services/1746781299car-lights.png" class="img-responsive" alt="service-01"></a>
+                  </div>
+                  <div class="service-dtl">
+                    <a href="#"><h5 class="service-heading">Headlight Lens Restoration</h5></a>
+                    <p>Restore clarity and brightness to dull or foggy headlights for safer night driving.</p>
+                  </div>
+                </div>
+              </div>
+                          <div class="col-md-3 col-sm-6">
+                <div class="service-block text-center">
+                  <div class="service-icon">
+                    <a href="#"><img src="https://www.luxesignature.com.my/images/services/1746781377vehicle.png" class="img-responsive" alt="service-01"></a>
+                  </div>
+                  <div class="service-dtl">
+                    <a href="#"><h5 class="service-heading">Scratch Removal</h5></a>
+                    <p>Erase light scratches and restore your car’s smooth, flawless finish.</p>
+                  </div>
+                </div>
+              </div>
+                          <div class="col-md-3 col-sm-6">
+                <div class="service-block text-center">
+                  <div class="service-icon">
+                    <a href="#"><img src="https://www.luxesignature.com.my/images/services/1746781445crude-oil.png" class="img-responsive" alt="service-01"></a>
+                  </div>
+                  <div class="service-dtl">
+                    <a href="#"><h5 class="service-heading">Tar Removal</h5></a>
+                    <p>Safely eliminate stubborn tar spots without damaging your car’s paintwork.</p>
+                  </div>
+                </div>
+              </div>
+                          <div class="col-md-3 col-sm-6">
+                <div class="service-block text-center">
+                  <div class="service-icon">
+                    <a href="#"><img src="https://www.luxesignature.com.my/images/services/1746781623car.png" class="img-responsive" alt="service-01"></a>
+                  </div>
+                  <div class="service-dtl">
+                    <a href="#"><h5 class="service-heading">Odor Elimination</h5></a>
+                    <p>Professional exterior and interior cleaning to keep your vehicle looking its best.</p>
+                  </div>
+                </div>
+              </div>
+                          <div class="col-md-3 col-sm-6">
+                <div class="service-block text-center">
+                  <div class="service-icon">
+                    <a href="#"><img src="https://www.luxesignature.com.my/images/services/1746781664engineering.png" class="img-responsive" alt="service-01"></a>
+                  </div>
+                  <div class="service-dtl">
+                    <a href="#"><h5 class="service-heading">Engine Cleaning</h5></a>
+                    <p>Thorough cleaning of the engine bay to improve performance and maintain a clean, professional look.</p>
+                  </div>
+                </div>
+              </div>
+                          <div class="col-md-3 col-sm-6">
+                <div class="service-block text-center">
+                  <div class="service-icon">
+                    <a href="#"><img src="https://www.luxesignature.com.my/images/services/1746781706risk.png" class="img-responsive" alt="service-01"></a>
+                  </div>
+                  <div class="service-dtl">
+                    <a href="#"><h5 class="service-heading">Hazardous Cleaning</h5></a>
+                    <p>Safe removal of biohazards, chemicals, or toxic residues to ensure a clean and secure vehicle environment.</p>
+                  </div>
+                </div>
+              </div>
+                          <div class="col-md-3 col-sm-6">
+                <div class="service-block text-center">
+                  <div class="service-icon">
+                    <a href="#"><img src="https://www.luxesignature.com.my/images/services/1746781745keys.png" class="img-responsive" alt="service-01"></a>
+                  </div>
+                  <div class="service-dtl">
+                    <a href="#"><h5 class="service-heading">Valet Service</h5></a>
+                    <p>Convenient vehicle pickup and return for a hassle-free car care experience.</p>
+                  </div>
+                </div>
+              </div>
+                          <div class="col-md-3 col-sm-6">
+                <div class="service-block text-center">
+                  <div class="service-icon">
+                    <a href="#"><img src="https://www.luxesignature.com.my/images/services/1747202439car-light_2523343.png" class="img-responsive" alt="service-01"></a>
+                  </div>
+                  <div class="service-dtl">
+                    <a href="#"><h5 class="service-heading">Paint Protective Film (PPF)</h5></a>
+                    <p>Protect your vehicle’s paint from everyday damage with our premium Paint Protection Film (PPF). PPF is a high-performance, virtually invisible urethane film that acts as a shield against scratches, stone chips, road debris, bird droppings, and UV rays. Designed to preserve your car’s original finish, it provides long-lasting protection without compromising aesthetics.
+
+Key Features:
+
+Self-healing surface that removes minor scratches with heat
+
+UV and stain-resistant technology to prevent yellowing and discoloration
+
+High-gloss or matte finish options for a seamless look
+
+Enhances resale value by maintaining factory paint
+
+Easy to maintain and clean
+
+Whether you&#039;re protecting high-impact areas like the front bumper and hood or going for full-body coverage, PPF offers unmatched durability and clarity for peace of mind on the road.</p>
+                  </div>
+                </div>
+              </div>
+                          <div class="col-md-3 col-sm-6">
+                <div class="service-block text-center">
+                  <div class="service-icon">
+                    <a href="#"><img src="https://www.luxesignature.com.my/images/services/1747202530car-painting_11376765.png" class="img-responsive" alt="service-01"></a>
+                  </div>
+                  <div class="service-dtl">
+                    <a href="#"><h5 class="service-heading">Car Coating</h5></a>
+                    <p>Give your vehicle the ultimate shine and long-lasting protection with our advanced Ceramic &amp; Graphene Coating solutions. Designed for enthusiasts who demand the best, these coatings form a strong, hydrophobic layer that bonds with your vehicle’s paint, creating a durable shield against harsh elements.
+
+Ceramic Coating Benefits:
+Deep Gloss Finish – Enhances color depth with a showroom-like shine
+
+Hydrophobic Effect – Water, dirt, and grime slide right off
+
+UV &amp; Chemical Resistance – Prevents fading, oxidation, and chemical stains
+
+Scratch Resistance – Adds a durable layer that reduces micro-scratches
+
+Easy Maintenance – Keeps your car cleaner for longer and reduces washing time
+
+Graphene Coating Advantages:
+Enhanced Durability – Longer-lasting protection compared to traditional ceramic coatings
+
+Superior Heat Resistance – Reduces water spotting and surface temperatures
+
+Extreme Slickness – Smoother finish for an ultra-slick feel
+
+Antistatic Properties – Repels dust and keeps the surface cleaner
+
+Whether you choose Ceramic for its proven protection or upgrade to Graphene for next-level performance, both coatings provide unmatched gloss, protection, and ease of maintenance.</p>
+                  </div>
+                </div>
+              </div>
+                              </div>
+      </div>
+    </div>
+  <!--  end services -->
+  
+  
+  
+  
+  
+    
+  
+    <!--  footer -->
+  <footer id="footer" class="footer-main-block">
+    <div class="footer-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-about footer-widget">
+              <h5 class="footer-heading">About Us</h5>
+                                                                    <img src="https://www.luxesignature.com.my/images/logo/Logo-H-IMG-Gold-Hi-Res-small.png" class="img-responsive" alt="logo">
+                                                              <p>Discover LUXÉ Signature Detailing, the ultimate destination for high-end car detailing excellence. </p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-services footer-widget">
+              <h5 class="footer-heading">Our Services</h5>
+              <ul>
+                                                      <li><i class="fa fa-caret-right" aria-hidden="true"></i>Vehicle Hand Wash</li>
+                                      <li><i class="fa fa-caret-right" aria-hidden="true"></i>Headlight Lens Restoration</li>
+                                      <li><i class="fa fa-caret-right" aria-hidden="true"></i>Scratch Removal</li>
+                                      <li><i class="fa fa-caret-right" aria-hidden="true"></i>Tar Removal</li>
+                                      <li><i class="fa fa-caret-right" aria-hidden="true"></i>Odor Elimination</li>
+                                      <li><i class="fa fa-caret-right" aria-hidden="true"></i>Engine Cleaning</li>
+                                      <li><i class="fa fa-caret-right" aria-hidden="true"></i>Hazardous Cleaning</li>
+                                      <li><i class="fa fa-caret-right" aria-hidden="true"></i>Valet Service</li>
+                                      <li><i class="fa fa-caret-right" aria-hidden="true"></i>Paint Protective Film (PPF)</li>
+                                      <li><i class="fa fa-caret-right" aria-hidden="true"></i>Car Coating</li>
+                                                </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-opening footer-widget">
+              <h5 class="footer-heading">Opening Hours</h5>
+              <div class="row">
+                                                      <div class="col-xs-5">
+                      <div class="opening-day">Monday</div>
+                    </div>
+                    <div class="col-xs-7">
+                      <div class="opening-time">
+                                                  10:00 AM - 08:00 PM
+                                                                      </div>
+                    </div>
+                                      <div class="col-xs-5">
+                      <div class="opening-day">Tuesday</div>
+                    </div>
+                    <div class="col-xs-7">
+                      <div class="opening-time">
+                                                  10:00 AM - 08:00 PM
+                                                                      </div>
+                    </div>
+                                      <div class="col-xs-5">
+                      <div class="opening-day">Wednesday</div>
+                    </div>
+                    <div class="col-xs-7">
+                      <div class="opening-time">
+                                                  10:00 AM - 08:00 PM
+                                                                      </div>
+                    </div>
+                                      <div class="col-xs-5">
+                      <div class="opening-day">Thursday</div>
+                    </div>
+                    <div class="col-xs-7">
+                      <div class="opening-time">
+                                                  10:00 AM - 08:00 PM
+                                                                      </div>
+                    </div>
+                                      <div class="col-xs-5">
+                      <div class="opening-day">Friday</div>
+                    </div>
+                    <div class="col-xs-7">
+                      <div class="opening-time">
+                                                  10:00 AM - 08:00 PM
+                                                                      </div>
+                    </div>
+                                      <div class="col-xs-5">
+                      <div class="opening-day">Saturday</div>
+                    </div>
+                    <div class="col-xs-7">
+                      <div class="opening-time">
+                                                  10:00 AM - 08:00 PM
+                                                                      </div>
+                    </div>
+                                      <div class="col-xs-5">
+                      <div class="opening-day">Sunday</div>
+                    </div>
+                    <div class="col-xs-7">
+                      <div class="opening-time">
+                                                  10:00 AM - 08:00 PM
+                                                                      </div>
+                    </div>
+                                                </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-subscribe footer-widget">
+              <h5 class="footer-heading">Subscribe Newsletter</h5>
+              <p>Stay updated with the latest offers, tips, and exclusive car care news—straight to your inbox.</p>
+                              <form method="POST" action="https://www.luxesignature.com.my/subscribe" accept-charset="UTF-8" class="subscribe-form"><input name="_token" type="hidden" value="N6a8QIU7e5WaOM2kZLAUqPPNjTF8Wf8UharuhFcY">
+                  <label class="sr-only">Your Email address</label>
+                  <div>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter email address">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    <small class="text-danger"></small>
+                  </div>
+                </form>
+                            <div class="social-icon">
+                <span>Follow us on:</span>
+                <ul>
+                                                            <li><a href="https://maps.app.goo.gl/GbYt2ALRN9HQuH9CA?g_st=com.google.maps.preview.copy" title="Google" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+                                          <li><a href="https://www.instagram.com" title="Instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                      </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="copyright-text text-center">
+              <p>&copy; Copyrights 2017 <a href="index.html">Auto Plus</a>. | All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+<!--  end footer -->
+<!-- jquery -->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/jquery.min.js"></script> <!-- jquery library js -->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/bootstrap.min.js"></script> <!-- bootstrap js -->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/owl.carousel.js"></script> <!-- owl carousel js -->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/select2.full.min.js"></script> <!-- Select2 -->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/jquery.ajaxchimp.js"></script> <!-- mail chimp js -->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/smooth-scroll.js"></script> <!-- smooth scroll js -->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/jquery.magnific-popup.min.js"></script> <!-- magnify popup js -->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/waypoints.min.js"></script> <!-- facts count js required for jquery.counterup.js file -->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/jquery.counterup.js"></script> <!-- facts count js-->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/menumaker.js"></script> <!-- menu js-->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/jquery.appear.js"></script> <!-- progress bar js -->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/jquery.countdown.js"></script>  <!-- event countdown js -->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/price-slider.js"></script> <!-- price slider / filter js-->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/bootstrap-datepicker.js"></script> <!-- bootstrap datepicker js-->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/jquery.elevatezoom.js"></script> <!-- image zoom js-->
+<script type="text/javascript" src="https://www.luxesignature.com.my/js/theme.js"></script> <!-- custom js -->
+<!-- end jquery -->
+<script>
+  $( document ).ready(function() {
+    $('.sessionmodal').addClass("active");
+    setTimeout(function() {
+        $('.sessionmodal').removeClass("active");
+   }, 4200);
+  });
+
+  //Select2
+  $('.select2').select2();
+</script>
+<script type="text/javascript" language="javascript">
+//all controller is disable 
+  $(function() {
+    var isCtrl = false;
+    document.onkeyup=function(e){
+      if(e.which == 17) isCtrl=false;
+    }
+    document.onkeydown=function(e){
+      if(e.which == 17) isCtrl=true;
+      if(e.which == 85 && isCtrl == true) {
+        return false;
+      }
+    };
+    $(document).keydown(function (event) {
+      if (event.keyCode == 123) { // Prevent F12
+        return false;
+      } 
+      else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I
+        return false;
+      }
+    });  
+  });
+   // end all controller is disable 
+</script></body>
+<!--body end -->
+</html>
+
